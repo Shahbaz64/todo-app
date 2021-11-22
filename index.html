@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/todo.css">
+    <script src="https://use.fontawesome.com/b9e5bf757a.js"></script>
+    <title>Todo App</title>
+</head>
+
+<body>
+    <main class="main">
+        <div class="input-section">
+            <input type="text" id="todo-txt" placeholder="What will you do today?">
+            <button class="add-btn" onclick="add()">ADD</button>
+        </div>
+        <div id="error-msg">
+            <p id="er-msg-txt"></p>
+        </div>
+
+        <div id="my-todos">
+            <p id="no-todo-txt">Nothing Added yet!</p>
+        </div>
+    </main>
+    <script src="js/todo.js"></script>
+</body>
+
+</html>
