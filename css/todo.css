@@ -5,8 +5,7 @@ body{
 .input-section{
     display: flex;
     flex-direction: row;    
-    width: 80%;
-    min-height: 50%; 
+    width: 75%;
     margin: auto;
     justify-content: center;
     
@@ -31,7 +30,7 @@ body{
     margin-top: 30px;
     padding: 10px;
     height: 50px;
-    width: 100px;
+    width: 15vw;
 }
 
 #my-todos{
@@ -44,7 +43,7 @@ body{
     background-color: white;
     padding: 5px;
     justify-content: center;
-    margin-top: 35px;
+    margin-top: 5%;
 }
 
 #todo-txt:focus{
@@ -90,8 +89,15 @@ body{
 }
 
 #del-icon:hover{
-    color: black;
-    
+    color: black;   
+}
+
+#add-button:hover{
+    background-color: #499de6;   
+}
+
+#box:hover{
+    cursor: pointer;
 }
 
 .todos p{

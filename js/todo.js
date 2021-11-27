@@ -1,8 +1,8 @@
 "use strict";
 
-function add() {
-  let todo_text = document.getElementById("todo-txt");
-  if (todo_text.value == "") {
+const addTodo = () => {
+  const todo_text = document.getElementById("todo-txt");
+  if (!todo_text.value) {
     document.getElementById("er-msg-txt").innerHTML = "Please Enter Some Text!";
   } else {
     if (document.getElementById("my-todos").firstElementChild.tagName == "P") {
@@ -12,36 +12,40 @@ function add() {
     <div class="todos">
         <input type="checkbox" id="box" onchange="striker(this)">
         <p class="todos-txt">${todo_text.value}</p>
-        <i id="del-icon" class="fa fa-trash fa-lg" onclick="remove_todos(this)"></i>
+        <i id="del-icon" class="fa fa-trash fa-lg" onclick="removeTodos(this)"></i>
     </div>
     <hr>
 </div>`;
   }
   todo_text.value = "";
-}
+};
 
-function striker(element) {
-  if (element.checked == true) {
-    element.nextElementSibling.innerHTML =
-      element.nextElementSibling.innerText.strike();
+const striker = element => {
+  if (element.checked) {
+    element.setAttribute("checked", "checked");
+    element.nextElementSibling.style.textDecoration = "line-through";
   } else {
-    element.nextElementSibling.innerHTML = element.nextElementSibling.innerText;
+    element.nextElementSibling.style.textDecoration = "none";
   }
 }
 
-function remove_todos(element) {
+const removeTodos = element => {
   element.parentElement.parentElement.remove();
-  if (document.getElementById("my-todos").childElementCount === 0) {
+  if (!document.getElementById("my-todos").childElementCount) {
     document.getElementById(
       "my-todos"
     ).innerHTML = `<p id="no-todo-txt">Nothing Added yet!</p>`;
   }
 }
 
-function hide_error_msg() {
-  let element = document.getElementById("error-msg").firstElementChild;
-  element.innerHTML = "";
+const hideErrorMsg = () => {
+  document.getElementById("error-msg").firstElementChild.innerHTML = "";
 }
 
-const el = document.getElementById("todo-txt");
-el.addEventListener("focus", hide_error_msg);
+document.getElementById("todo-txt").addEventListener("focus", hideErrorMsg);
+document.getElementById("add-button").addEventListener("click", addTodo);
+document.getElementById("todo-txt").addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    addTodo();
+  }
+});
