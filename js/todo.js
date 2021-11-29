@@ -5,6 +5,7 @@ const addTodo = () => {
   if (!todo_text.value) {
     document.getElementById("er-msg-txt").innerHTML = "Please Enter Some Text!";
   } else {
+    document.getElementById("er-msg-txt").innerHTML = "";
     if (document.getElementById("my-todos").firstElementChild.tagName == "P") {
       document.getElementById("my-todos").firstElementChild.remove();
     }
