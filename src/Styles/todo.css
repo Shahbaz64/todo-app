@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+}
+
+.input-section {
+  justify-content: center;
+  flex-direction: row;
+  display: flex;
+  margin: auto;
+  margin-top: 5%;
+}
+
+.todo-txt {
+  border: 7px solid #a46ff0;
+  display: inline-block;
+  border-right: none;
+  font-size: large;
+  border-right: none;
+  width: 50%;
+  padding: 15px 15px 15px;
+}
+
+.add-btn {
+  background-color: #6bb4f2;
+  border: 7px solid #a46ff0;
+  border-left: none;
+  color: white;
+  cursor: pointer;
+  font-size: large;
+  padding: 15px 30px;
+}
+
+.todo-txt:focus {
+  outline: none;
+}
+
+.err-msg{
+  /* margin: auto; */
+  text-align: center;
+  font-weight: bold;
+  color: rgb(250, 229, 37);
+  font-size: 18px;
+  margin-top: 2%;
+}
+
+.my-todos {
+  display: flex;
+  flex-flow: column wrap;
+  background-color: white;
+  /* align-items: baseline; */
+  justify-content: center;
+  text-align: start;
+  color: rgb(97, 96, 96);
+  margin: auto;
+  font-size: 18px;
+  width: 58%;
+  min-height: 42px;
+  border: 7px solid #a46ff0;
+  padding: 5px;
+  margin-top: 4%;
+}
+
+.todo-item {
+  align-items: baseline;
+  display: flex;
+  padding: 10px;
+}
+
+.chk-box {
+  width: 15px;
+  margin-left: 10px;
+}
+
+#todo-txt {
+  justify-content: start;
+  word-break: break-all;
+  width: 92%;
+  padding-left: 10px;
+}
+
+#del-icon {
+  color: #726f6f;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.strike{
+  text-decoration: line-through;
+  color: black;
+}
+
+.non-strike{
+  text-decoration: none;
+}
+
+#del-icon:hover {
+  color: black;
+}
+
+.add-btn:hover {
+  background-color: #499de6;
+}
+
+.chk-box:hover {
+  cursor: pointer;
+}
