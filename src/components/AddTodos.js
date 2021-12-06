@@ -29,6 +29,12 @@ class AddTodos extends Component {
     }
   };
 
+  onKeyDownEventHandler = (e) => {
+    if (e.key === "Enter") {
+      this.addTodoHandler();
+    }
+  };
+
   render() {
     return (
       <>
@@ -39,6 +45,7 @@ class AddTodos extends Component {
             className="todo-txt"
             value={this.state.todoTxt}
             onChange={this.onChangeInputHandler}
+            onKeyDown={this.onKeyDownEventHandler}
             autoFocus
           />
           <button className="add-btn" onClick={this.addTodoHandler}>
