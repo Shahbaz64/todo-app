@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import TodosList from "./TodosList";
-import "../Styles/todo.css";
+import TodosList from "components/todosList";
+import "styles/todo.css";
+import { v4 as uuid } from "uuid";
 
 class AddTodos extends Component {
   state = {
@@ -18,7 +19,7 @@ class AddTodos extends Component {
 
   addTodoHandler = () => {
     if (this.state.todoTxt) {
-      this.state.todos.push(this.state.todoTxt);
+      this.state.todos.push({ id: uuid(), val: this.state.todoTxt });
       this.setState({
         todoTxt: "",
       });
@@ -27,6 +28,11 @@ class AddTodos extends Component {
         errMsg: "Enter Something First!",
       });
     }
+  };
+
+  deleteTodoHandler = (todoIndex) => {
+    this.state.todos.splice(todoIndex, 1);
+    this.setState({ todos: this.state.todos });
   };
 
   onKeyDownEventHandler = (e) => {
@@ -53,7 +59,10 @@ class AddTodos extends Component {
           </button>
         </div>
         <p className="err-msg">{this.state.errMsg}</p>
-        <TodosList myTodos={this.state.todos} />
+        <TodosList
+          myTodos={this.state.todos}
+          onDeleteHandler={this.deleteTodoHandler}
+        />
       </>
     );
   }

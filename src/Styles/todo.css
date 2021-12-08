@@ -34,7 +34,7 @@
   outline: none;
 }
 
-.err-msg{
+.err-msg {
   /* margin: auto; */
   text-align: center;
   font-weight: bold;
@@ -47,11 +47,10 @@
   display: flex;
   flex-flow: column wrap;
   background-color: white;
-  /* align-items: baseline; */
   justify-content: center;
   text-align: start;
-  color: rgb(97, 96, 96);
   margin: auto;
+  color: rgb(97, 96, 96);
   font-size: 18px;
   width: 58%;
   min-height: 42px;
@@ -64,6 +63,7 @@
   align-items: baseline;
   display: flex;
   padding: 10px;
+  border-bottom: 1px solid black;
 }
 
 .chk-box {
@@ -72,6 +72,7 @@
 }
 
 #todo-txt {
+  color: black;
   justify-content: start;
   word-break: break-all;
   width: 92%;
@@ -84,12 +85,11 @@
   cursor: pointer;
 }
 
-.strike{
+.strike {
   text-decoration: line-through;
-  color: black;
 }
 
-.non-strike{
+.non-strike {
   text-decoration: none;
 }
 

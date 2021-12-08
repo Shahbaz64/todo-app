@@ -1,8 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
-
-//Components
-import Todo from "./components/AddTodos";
+import Todo from "components/addTodos";
 
 const App = () => {
   return <Todo />;

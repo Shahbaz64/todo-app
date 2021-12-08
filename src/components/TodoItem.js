@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import "../Styles/todo.css";
+import PropTypes from "prop-types";
+import "styles/todo.css";
 
 export class TodoItem extends Component {
   state = {
@@ -36,10 +37,19 @@ export class TodoItem extends Component {
             onClick={this.props.onDeleteHandler}
           ></i>
         </div>
-        <hr></hr>
       </>
     );
   }
 }
+
+TodoItem.propTypes = {
+  todoTxt: PropTypes.string,
+  onDeleteHandler: PropTypes.func,
+};
+
+TodoItem.defaultProps = {
+  todoTxt: "",
+  onDeleteHandler: () => {},
+};
 
 export default TodoItem;

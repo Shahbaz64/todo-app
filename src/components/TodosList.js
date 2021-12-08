@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import "./TodoItem";
-import "../Styles/todo.css";
-import TodoItem from "./TodoItem";
+import TodoItem from "components/todoItem";
+import PropTypes from "prop-types";
+// import { v4 as uuid } from "uuid";
+import "styles/todo.css";
 
 export class TodosList extends Component {
   state = {
@@ -9,34 +10,39 @@ export class TodosList extends Component {
     input: "",
   };
 
-  deleteTodoHandler = (todoIndex) => {
-    const todos = [...this.state.todos];
-    todos.splice(todoIndex, 1);
-    this.setState({ todos: todos });
-  };
-
   render() {
-    let todoList = null;
-    if (this.state.todos[0]) {
-      todoList = (
-        <div className="my-todos">
-          {this.state.todos.map((todo, index) => {
-            return (
-              <TodoItem
-                key={index}
-                todoTxt={todo}
-                onDeleteHandler={() => this.deleteTodoHandler(index)}
-              />
-            );
-          })}
-        </div>
-      );
-    } else {
-      todoList = <div className="my-todos">Nothing Added Yet!</div>;
-    }
-
-    return <div className="todo-container">{todoList}</div>;
+    return (
+      <div className="todo-container">
+        {this.state.todos[0] ? (
+          <div className="my-todos">
+            {this.state.todos.map(({ id, val }, index) => {
+              return (
+                <TodoItem
+                  key={id}
+                  todoTxt={val}
+                  onDeleteHandler={() => this.props.onDeleteHandler(index)}
+                />
+              );
+            })}
+          </div>
+        ) : (
+          <div className="my-todos">
+            <p>Nothing Added Yet!</p>
+          </div>
+        )}
+      </div>
+    );
   }
 }
+
+TodosList.propTypes = {
+  myTodos: PropTypes.array,
+  onDeleteHandler: PropTypes.func,
+};
+
+TodosList.defaultProps = {
+  myTodos: [],
+  onDeleteHandler: () => {},
+};
 
 export default TodosList;
