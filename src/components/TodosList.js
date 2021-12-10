@@ -36,8 +36,8 @@ export class TodosList extends Component {
 }
 
 TodosList.propTypes = {
-  myTodos: PropTypes.array,
-  onDeleteHandler: PropTypes.func,
+  myTodos: PropTypes.array.isRequired,
+  onDeleteHandler: PropTypes.func.isRequired,
 };
 
 TodosList.defaultProps = {

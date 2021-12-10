@@ -43,7 +43,7 @@ class AddTodos extends Component {
 
   render() {
     return (
-      <>
+      <div>
         <div className="input-section">
           <input
             type="text"
@@ -63,7 +63,7 @@ class AddTodos extends Component {
           myTodos={this.state.todos}
           onDeleteHandler={this.deleteTodoHandler}
         />
-      </>
+      </div>
     );
   }
 }

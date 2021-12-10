@@ -43,8 +43,8 @@ export class TodoItem extends Component {
 }
 
 TodoItem.propTypes = {
-  todoTxt: PropTypes.string,
-  onDeleteHandler: PropTypes.func,
+  todoTxt: PropTypes.string.isRequired,
+  onDeleteHandler: PropTypes.func.isRequired,
 };
 
 TodoItem.defaultProps = {
